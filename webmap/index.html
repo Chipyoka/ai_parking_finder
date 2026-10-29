@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Parking Space Finder</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="icon" href="/fav.webp" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="header-row">
+      <h1>AI Parking Space Finder</h1>
+      <div class="header-row">
+        <a href="/admin">Admin Login</a>
+      </div>
+    </div>
+    <p id="status">Connecting to server...</p>
+  </header>
+
+  <div id="map"></div>
+
+  <p class="cap">Available Sites</p>
+  <ul id="site-summary-list"></ul>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="static/js/map_client.js"></script>
+</body>
+</html>

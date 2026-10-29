@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - AI Parking Space Finder</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="static/css/admin.css" />
+    <link rel="icon" href="/fav.webp" type="image/x-icon">
+</head>
+<body>
+  <header id="admin-header">
+    <h1>Admin Dashboard</h1>
+    <p id="status">Checking session...</p>
+  </header>
+
+  <!-- Shown only when not logged in -->
+  <section id="login-section" style="display:none;">
+    <h2>Log in</h2>
+    <form id="login-form">
+      <label>Username <input type="text" id="login-username" required></label>
+      <label>Password <input type="password" id="login-password" required></label>
+      <button type="submit">Log in</button>
+    </form>
+    <p id="login-error" class="error"></p>
+  </section>
+
+  <!-- Shown only when logged in as admin -->
+  <section id="dashboard-section" style="display:none;">
+    <div class="dashboard-header">
+      <span id="welcome-msg"></span>
+      <button id="logout-btn">Log out</button>
+    </div>
+    <div class="dashboard-container">
+        <!-- form -->
+        <div>
+            <h2>Add a site</h2>
+            <form id="add-site-form">
+              <label>Site name
+                <input type="text" id="site-name" placeholder="e.g. Cairo Road Car Park" required>
+              </label>
+              <label>Video source
+                <input type="text" id="site-source" placeholder="0, data/sample_footage/clip.mp4, or rtsp://..." required>
+              </label>
+              <div class="coord-row">
+                <label>Latitude
+                  <input type="number" step="any" id="site-lat" placeholder="-15.4167" required>
+                </label>
+                <label>Longitude
+                  <input type="number" step="any" id="site-lng" placeholder="28.2833" required>
+                </label>
+              </div>
+              <p class="hint">Preview updates as you type:</p>
+              <div id="preview-map"></div>
+              <button type="submit">Add site</button>
+            </form>
+            <p id="add-site-error" class="error"></p>
+        </div>
+
+        <!-- Show list of sites -->
+        <div>
+
+            <h2>Registered sites</h2>
+            <ul id="site-list"></ul>
+        </div>
+    </div>
+
+  </section>
+
+  <!-- Shown if logged in but not an admin -->
+  <section id="unauthorized-section" style="display:none;">
+    <p>You're logged in, but this account doesn't have admin access.</p>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="static/js/admin.js"></script>
+</body>
+</html>

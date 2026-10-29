@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Operator Dashboard - AI Parking Space Finder</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Operator Dashboard</h1>
+    <p id="status">Connecting to server...</p>
+  </header>
+
+  <section>
+    <h2>Live bay count</h2>
+    <p><span id="free-count">-</span> free / <span id="occupied-count">-</span> occupied</p>
+  </section>
+
+  <ul id="bay-list"></ul>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="static/js/map_client.js"></script>
+</body>
+</html>

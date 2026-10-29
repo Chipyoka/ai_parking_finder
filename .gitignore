@@ -1,0 +1,26 @@
+# Environment
+.env
+.env.example
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Model weights and training runs (large binaries, don't commit)
+detection/model/*.pt
+detection/runs/
+
+# Sample/annotated footage (large files, keep out of git; share via drive instead)
+data/sample_footage/*
+data/annotated/*
+!data/sample_footage/.gitkeep
+!data/annotated/.gitkeep
+
+# OS / editor
+.vscode/
+.DS_Store
+Thumbs.db
+*.zip
+*/*/*.zip
+ai_parking_finder.zip
+data/
